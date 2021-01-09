@@ -7,7 +7,7 @@ wordpress: #defined a containter called wordpress
 wordpress_db:
    image: mariadb
    environment:
-     MYSQL_ROOT_PASSWORD: Goldsmith1992!
+     MYSQL_ROOT_PASSWORD: password
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
   links:
@@ -16,4 +16,4 @@ phpmyadmin:
      - 8181:80
   environment:
      MYSQL_USERNAME: root
-     MYSQL_ROOT_PASSWORD: Goldsmith1992!
+     MYSQL_ROOT_PASSWORD: paswsword
