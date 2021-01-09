@@ -1,0 +1,19 @@
+wordpress: #defined a containter called wordpress
+  image: wordpress #Image pulled from docker hub
+  links:
+    - wordpress_db:mysql #I want to link maria db with wordpress for my database
+  ports:
+    - 8282:80 #port 80 linked to 8080 of the host machine
+wordpress_db:
+   image: mariadb
+   environment:
+     MYSQL_ROOT_PASSWORD: Goldsmith1992!
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  links:
+     - wordpress_db:mysql
+  ports:
+     - 8181:80
+  environment:
+     MYSQL_USERNAME: root
+     MYSQL_ROOT_PASSWORD: Goldsmith1992!
